@@ -272,10 +272,8 @@ Citizen.CreateThread(function()
 end)
 
 
-RegisterCommand("waynes", function()
-
-    if ESX.PlayerData.job.name == "waynes" then      
+keyRegister("TikozOpenWaynes", "Menu F6", "F6", function()
+    if ESX.PlayerData.job.name == "waynes" then
         CreateMenu(menuwaynes)
-    end     
-
-end, false)
+    end
+end)
