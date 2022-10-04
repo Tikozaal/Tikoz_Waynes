@@ -1,5 +1,5 @@
 INSERT INTO `addon_account` (name, label, shared) VALUES 
-	('society_waynes','waynes',1),
+	('society_waynes','waynes',1)
 ;
 
 INSERT INTO `datastore` (name, label, shared) VALUES 
