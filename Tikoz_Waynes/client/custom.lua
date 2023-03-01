@@ -225,46 +225,42 @@ menuvoiture = {
             ESX.TriggerServerCallback("Tikoz:WaynesVehiList", function(waynelist) 
 
                 if btn.name == "Cartographie" then
-                    Citizen.CreateThread(function()
-                        while true do 
-                            for i=1, #waynelist, 1 do
+                    for i=1, #waynelist, 1 do
 
-                                    local ped = PlayerPedId()
-                                    local veh = GetVehiclePedIsIn(ped, true)
-                                    local plateveh = GetVehicleNumberPlateText(veh)
-                                
-                                if plateveh == waynelist[i].plate then 
-                                
-                                    menuvoiture.Menu["Cartographie"].b = {}
-                                    if waynelist[i].reprog == 1 then
-                                        table.insert(menuvoiture.Menu["Cartographie"].b, { name = "Moteur d'origine", ask = "", askX = true})
-                                        table.insert(menuvoiture.Menu["Cartographie"].b, { name = "Stage 1", ask = "", askX = true})
-                                    
-                                    elseif waynelist[i].reprog == 2 then
-                                        table.insert(menuvoiture.Menu["Cartographie"].b, { name = "Moteur d'origine", ask = "", askX = true})
-                                        table.insert(menuvoiture.Menu["Cartographie"].b, { name = "Stage 1", ask = "", askX = true})
-                                        table.insert(menuvoiture.Menu["Cartographie"].b, { name = "Stage 2", ask = "", askX = true})
-                                    
-                                    elseif waynelist[i].reprog == 3 then
-                                        table.insert(menuvoiture.Menu["Cartographie"].b, { name = "Moteur d'origine", ask = "", askX = true})
-                                        table.insert(menuvoiture.Menu["Cartographie"].b, { name = "Stage 1", ask = "", askX = true})
-                                        table.insert(menuvoiture.Menu["Cartographie"].b, { name = "Stage 2", ask = "", askX = true})
-                                        table.insert(menuvoiture.Menu["Cartographie"].b, { name = "Stage 3", ask = "", askX = true})
+                            local ped = PlayerPedId()
+                            local veh = GetVehiclePedIsIn(ped, true)
+                            local plateveh = GetVehicleNumberPlateText(veh)
+                        
+                        if plateveh == waynelist[i].plate then 
+                        
+                            menuvoiture.Menu["Cartographie"].b = {}
+                            if waynelist[i].reprog == 1 then
+                                table.insert(menuvoiture.Menu["Cartographie"].b, { name = "Moteur d'origine", ask = "", askX = true})
+                                table.insert(menuvoiture.Menu["Cartographie"].b, { name = "Stage 1", ask = "", askX = true})
+                            
+                            elseif waynelist[i].reprog == 2 then
+                                table.insert(menuvoiture.Menu["Cartographie"].b, { name = "Moteur d'origine", ask = "", askX = true})
+                                table.insert(menuvoiture.Menu["Cartographie"].b, { name = "Stage 1", ask = "", askX = true})
+                                table.insert(menuvoiture.Menu["Cartographie"].b, { name = "Stage 2", ask = "", askX = true})
+                            
+                            elseif waynelist[i].reprog == 3 then
+                                table.insert(menuvoiture.Menu["Cartographie"].b, { name = "Moteur d'origine", ask = "", askX = true})
+                                table.insert(menuvoiture.Menu["Cartographie"].b, { name = "Stage 1", ask = "", askX = true})
+                                table.insert(menuvoiture.Menu["Cartographie"].b, { name = "Stage 2", ask = "", askX = true})
+                                table.insert(menuvoiture.Menu["Cartographie"].b, { name = "Stage 3", ask = "", askX = true})
 
-                                    elseif waynelist[i].reprog == 4 then
-                                        table.insert(menuvoiture.Menu["Cartographie"].b, { name = "Moteur d'origine", ask = "", askX = true})
-                                        table.insert(menuvoiture.Menu["Cartographie"].b, { name = "Stage 1", ask = "", askX = true})
-                                        table.insert(menuvoiture.Menu["Cartographie"].b, { name = "Stage 2", ask = "", askX = true})
-                                        table.insert(menuvoiture.Menu["Cartographie"].b, { name = "Stage 3", ask = "", askX = true})
-                                        table.insert(menuvoiture.Menu["Cartographie"].b, { name = "Stage 4", ask = "", askX = true})
-                                    end
-                                 
-                                    
-                                end
+                            elseif waynelist[i].reprog == 4 then
+                                table.insert(menuvoiture.Menu["Cartographie"].b, { name = "Moteur d'origine", ask = "", askX = true})
+                                table.insert(menuvoiture.Menu["Cartographie"].b, { name = "Stage 1", ask = "", askX = true})
+                                table.insert(menuvoiture.Menu["Cartographie"].b, { name = "Stage 2", ask = "", askX = true})
+                                table.insert(menuvoiture.Menu["Cartographie"].b, { name = "Stage 3", ask = "", askX = true})
+                                table.insert(menuvoiture.Menu["Cartographie"].b, { name = "Stage 4", ask = "", askX = true})
                             end
-                            Citizen.Wait(0)
+                            
+                            
                         end
-                    end)
+                           
+                    end
                     OpenMenu('Cartographie')
 
                 end
